@@ -12,7 +12,8 @@ var PLUGIN_NAME = 'gulp-include-source';
 
 var placeholders = {
         'js': '<script src="%"></script>',
-        'css': '<link rel="stylesheet" href="%">'
+        'css': '<link rel="stylesheet" href="%">',
+        'favicon': '<link rel="icon" type="image/x-icon" href="%">'
     };
 
 function matchExpressions(contents) {
@@ -24,6 +25,8 @@ function replaceExtension(filename, type, options) {
         filename = replaceExt(filename, '.' + options.scriptExt);
     } else if (options.styleExt && type === 'css') {
         filename = replaceExt(filename, '.' + options.styleExt);
+    } else if (options.faviconExt && type === 'favicon') {
+        filename = replaceExt(filename, '.' + options.faviconExt);
     }
 
     return filename;
