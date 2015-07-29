@@ -1,6 +1,6 @@
 # gulp-include-source
 
-Gulp plugin to include scripts and styles into your HTML files automatically.
+Gulp plugin to include scripts, styles and favicons into your HTML files automatically.
 
 
 
@@ -9,7 +9,7 @@ Gulp plugin to include scripts and styles into your HTML files automatically.
 Install with [npm](https://npmjs.org/package/gulp-ngmin)
 
 ```
-npm install gulp-include-source --save-dev
+npm install porqz/gulp-include-source --save-dev
 ```
 
 
@@ -20,9 +20,9 @@ npm install gulp-include-source --save-dev
 
 ```js
 gulp.task('html', function() {
-  return gulp.src( './client/index.html' )
-    .pipe( includeSources() )
-    .pipe( gulp.dest('build/') );
+    return gulp.src('./client/index.html')
+        .pipe(includeSources({ baseUrl: 'http://localhost:3000/assets' }))
+        .pipe(gulp.dest('./build/'));
 });
 ```
 
@@ -31,12 +31,12 @@ gulp.task('html', function() {
 ```html
 <html>
 <head>
-  <!-- include:favicon(img/favicon.ico) -->
-  <!-- include:css(style/**/*.css) -->
+    <!-- include:favicon(img/favicon.ico) -->
+    <!-- include:css(style/**/*.css) -->
 </head>
 <body>
-  <!-- include:js(list:vendorList) -->
-  <!-- include:js(script/**/*.js) -->
+    <!-- include:js(list:vendorList) -->
+    <!-- include:js(script/**/*.js) -->
 </body>
 </html>
 ```
@@ -53,16 +53,16 @@ bower_components/angular/angular.js
 ```html
 <html>
 <head>
-  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-  <link rel="stylesheet" href="style/main.css">
+    <link rel="icon" type="image/x-icon" href="http://localhost:3000/assets/img/favicon.ico">
+    <link rel="stylesheet" href="http://localhost:3000/assets/style/main.css">
 </head>
 <body>
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="app.js"></script>
-  <script src="controllers/LoginController.js"></script>
-  <script src="controllers/MainController.js"></script>
-  <script src="services/LoginService.js"></script>
+    <script src="http://localhost:3000/assets/bower_components/jquery/dist/jquery.js"></script>
+    <script src="http://localhost:3000/assets/bower_components/angular/angular.js"></script>
+    <script src="http://localhost:3000/assets/app.js"></script>
+    <script src="http://localhost:3000/assets/controllers/LoginController.js"></script>
+    <script src="http://localhost:3000/assets/controllers/MainController.js"></script>
+    <script src="http://localhost:3000/assets/services/LoginService.js"></script>
 </body>
 </html>
 ```
