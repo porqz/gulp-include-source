@@ -83,7 +83,7 @@ Base directory from where the plugin will search for source files.
 
 Type: `String`
 
-URL which the plugin will prefix to paths.
+Will be used as prefix for URLs in resulted HTML code.
 
 #### options.scriptExt
 
