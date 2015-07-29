@@ -31,6 +31,7 @@ gulp.task('html', function() {
 ```html
 <html>
 <head>
+  <!-- include:favicon(img/favicon.ico) -->
   <!-- include:css(style/**/*.css) -->
 </head>
 <body>
@@ -52,6 +53,7 @@ bower_components/angular/angular.js
 ```html
 <html>
 <head>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
@@ -77,6 +79,12 @@ Type: `String`
 
 Base directory from where the plugin will search for source files.
 
+#### options.baseUrl
+
+Type: `String`
+
+URL which the plugin will prefix to paths.
+
 #### options.scriptExt
 
 Type: `String`
@@ -88,6 +96,12 @@ When available, will override script extension in resulted HTML code.
 Type: `String`
 
 When available, will override style extension in resulted HTML code.
+
+#### options.faviconExt
+
+Type: `String`
+
+When available, will override favicon extension in resulted HTML code.
 
 
 
