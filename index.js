@@ -13,7 +13,7 @@ var PLUGIN_NAME = 'gulp-include-source';
 var placeholders = {
         'js': '<script src="%"></script>',
         'css': '<link rel="stylesheet" href="%">',
-        'favicon': '<link rel="icon" type="image/x-icon" href="%">'
+        'favicon': '<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="%">'
     };
 
 function matchExpressions(contents) {
